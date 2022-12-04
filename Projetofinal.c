@@ -7,8 +7,8 @@ int main()
     setlocale(LC_ALL, "Portuguese");//Definindo a acentuação na linguagem portuguesa
     
     printf("Nome: João Arthur Pereira Melo\nMatrícula: UC22200743\nCurso: Ciência da computação\n\n");
-    printf("Nome: *****\nMatrícula: *****\nCurso: *****\n\n");
-    printf("Nome: *****\nMatrícula: *****\nCurso: *****\n\n\n");
+    printf("Nome: Mozaniel Medeiros dos Santos Junior\nMatrícula: UC22103112\nCurso: Ciência da computação\n\n");
+    printf("Nome: Nathalia Gonçalves Silva\nMatrícula: UC22200563\nCurso: Ciência da computação\n\n\n");
 
     int sessions, peopleSessionOne, peopleSessionTwo, accountant=1, age;
     char sex;
