@@ -97,10 +97,14 @@ int main()
             }
         
             while (accountant <= peopleSessionOne);
-   
+   npsSessionOne = ((promoter)/(promoter+neutral+detrator) - (detrator)/(promoter+neutral+detrator))*100;
+
+
    printf("Valor das Inteiras %d e Valor das Meias %d \n", ticketFull, ticketHalf); 
    	printf("Homens %d e Mulheres %d \n", male, female);    
    	printf("Homens Adultos %d e Mulheres adultas %d \n", adultMen, adultWomen);
+    printf("A quantidade de detratores %d, promotores %d, neutros %d e a nota de NPS foi de %d", detrator, promoter, neutral, npsSessionOne);
+    
  /*
            accountant = 1;         
         printf("Informe a quantidade de pessoas na sessao 2\n");
