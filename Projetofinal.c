@@ -12,7 +12,8 @@ int main()
     printf("Repositório GitHub https://github.com/MozanielJr/ProjetoFinalAlgoritmoUCB.git\n\n\n");
 
     int sessions, peopleSessionOne, peopleSessionTwo, accountant=1, age, ticketFull=0, ticketHalf=0, male=0, female=0, adultMen=0, adultWomen=0;
-    int notaNps, detrator=0, promoter=0, neutral=0,npsSessionOne;
+    int notaNps, detrator=0, promoter=0, neutral=0;
+    float npsSessionOne;
     char sex, ticket;
 	
 	
@@ -30,7 +31,7 @@ int main()
             scanf("%d", &peopleSessionOne);
         }
         
-         while (peopleSessionOne < 10);
+         while (peopleSessionOne < 3);
         
             do 
             {
@@ -57,7 +58,7 @@ int main()
                     if (sex == 'M' || sex == 'm' && age >= 18)
                             adultMen = adultMen + 1;
                     else if (sex == 'F' || sex == 'f' && age >= 18)
-                            adultWomen = adultMen + 1;                   
+                            adultWomen = adultWomen + 1;                   
 
                                                            
                 
@@ -97,13 +98,15 @@ int main()
             }
         
             while (accountant <= peopleSessionOne);
-   npsSessionOne = ((promoter)/(promoter+neutral+detrator) - (detrator)/(promoter+neutral+detrator))*100;
+
+            
+   npsSessionOne = (((promoter)/(promoter+neutral+detrator)) - ((detrator)/(promoter+neutral+detrator)))*100;
 
 
    printf("Valor das Inteiras %d e Valor das Meias %d \n", ticketFull, ticketHalf); 
    	printf("Homens %d e Mulheres %d \n", male, female);    
    	printf("Homens Adultos %d e Mulheres adultas %d \n", adultMen, adultWomen);
-    printf("A quantidade de detratores %d, promotores %d, neutros %d e a nota de NPS foi de %d", detrator, promoter, neutral, npsSessionOne);
+    printf("A quantidade de detratores %d, promotores %d, neutros %d e a nota de NPS foi de %0.2f", detrator, promoter, neutral, npsSessionOne);
     
  /*
            accountant = 1;         
