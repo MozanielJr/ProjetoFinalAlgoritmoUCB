@@ -9,6 +9,7 @@ int main()
     printf("Nome: João Arthur Pereira Melo\nMatrícula: UC22200743\nCurso: Ciência da computação\n\n");
     printf("Nome: Mozaniel Medeiros dos Santos Junior\nMatrícula: UC22103112\nCurso: Ciência da computação\n\n");
     printf("Nome: Nathalia Gonçalves Silva\nMatrícula: UC22200563\nCurso: Ciência da computação\n\n\n");
+    printf("Repositório GitHub https://github.com/MozanielJr/ProjetoFinalAlgoritmoUCB.git");
 
     int sessions, peopleSessionOne, peopleSessionTwo, accountant=1, age, ticketFull, ticketHalf, male, female;
     char sex, ticket;
