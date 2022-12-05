@@ -10,7 +10,7 @@ int main()
     printf("Nome: Mozaniel Medeiros dos Santos Junior\nMatrícula: UC22103112\nCurso: Ciência da computação\n\n");
     printf("Nome: Nathalia Gonçalves Silva\nMatrícula: UC22200563\nCurso: Ciência da computação\n\n\n");
 
-    int sessions, peopleSessionOne, peopleSessionTwo, accountant=1, age;
+    int sessions, peopleSessionOne, peopleSessionTwo, accountant=1, age, ticket, tickethalf;
     char sex;
 
     do 
