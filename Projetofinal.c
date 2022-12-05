@@ -10,11 +10,13 @@ int main()
     printf("Nome: Mozaniel Medeiros dos Santos Junior\nMatrícula: UC22103112\nCurso: Ciência da computação\n\n");
     printf("Nome: Nathalia Gonçalves Silva\nMatrícula: UC22200563\nCurso: Ciência da computação\n\n\n");
 
-    int sessions, peopleSessionOne, peopleSessionTwo, accountant=1, age, ticket, ticketHalf;
-    char sex, ingresso;
+    int sessions, peopleSessionOne, peopleSessionTwo, accountant=1, age, ticketFull, ticketHalf, male, female;
+    char sex, ticket;
 	
-	ticket = 0;
+	ticketFull = 0;
 	ticketHalf = 0;
+	male = 0;
+	female = 0;
 	
     do 
     {
@@ -40,7 +42,13 @@ int main()
                 	scanf("%s", &sex);
             	}
 					while (sex != 'M' && sex != 'm' && sex != 'F' && sex != 'f');
-
+				switch (sex){
+						case 'M': male = male + 1; break;
+						case 'm': male = male + 1; break;
+						case 'F': female = female + 1; break;
+						case 'f': female = female + 1; break;
+						default: break;
+}
                 do 
 				{
 					printf("\nDigite a idade do telespectador %d: ", accountant);
@@ -51,15 +59,15 @@ int main()
                 	do 
 				{
 					printf("\nUse --> I - Inteira, M - Meia-entrada\n\n Digite se é Inteira ou meia do telespectador %d: ", accountant);
-                	scanf("%c", &ingresso);
+                	scanf("%c", &ticket);
             	}
-					while (ingresso != 'I' && ingresso != 'i' && ingresso != 'M' && ingresso != 'm');
-					switch (ingresso){
+					while (ticket != 'I' && ticket != 'i' && ticket != 'M' && ticket != 'm');
+					switch (ticket){
 						case 'M': ticketHalf = ticketHalf + 25; break;
 						case 'm': ticketHalf = ticketHalf + 25; break;
-						case 'I': ticket = ticket + 50; break;
-						case 'i': ticket = ticket + 50; break;
-			
+						case 'I': ticketFull = ticketFull + 50; break;
+						case 'i': ticketFull = ticketFull + 50; break;
+                        default : break;
 						
 						
 						
@@ -70,7 +78,9 @@ int main()
         
             while (accountant <= peopleSessionOne);
    
-   printf("Valor das Inteiras %d e Valor das Meias %d", ticket, ticketHalf);    
+   printf("Valor das Inteiras %d e Valor das Meias %d \n", ticketFull, ticketHalf); 
+   	printf("Homenes %d e Mulheres %d", male, female);    
+ 
            accountant = 1;         
         printf("Informe a quantidade de pessoas na sessao 2\n");
         scanf("%d", &peopleSessionTwo);
@@ -87,5 +97,6 @@ int main()
             accountant++;
         }
         while (accountant <= peopleSessionTwo);
+        
     }   
 }   
