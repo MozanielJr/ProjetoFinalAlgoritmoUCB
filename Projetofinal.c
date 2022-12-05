@@ -36,7 +36,7 @@ int main()
 					printf("\nUse --> M - masculino, F - Feminino.\n\nDigite o sexo do telespectador %d: ", accountant);
                 	scanf("%s", &sex);
             	}
-					while (sex != 'M'|| sex != 'm'|| sex != 'F'|| sex != 'f');
+					while (sex != 'M' && sex != 'm' && sex != 'F' && sex != 'f');
 
                 do 
 				{
