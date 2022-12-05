@@ -43,7 +43,7 @@ int main()
 					printf("\nDigite a idade do telespectador %d: ", accountant);
                 	scanf("%d", &age);                	
 				}
-                	while (age > 3 && age < 100);
+                	while (age < 3 || age > 100);
                 	
                 accountant++;
             }
