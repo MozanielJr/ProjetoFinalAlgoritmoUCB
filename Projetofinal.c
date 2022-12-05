@@ -87,7 +87,7 @@ int main()
 					while (notaNps < 0 || notaNps > 10);
 					if (notaNps <= 6)
                         detrator = detrator + 1;
-                        else if (notaNps => 9)
+                        else if (notaNps >= 9)
                         promoter = promoter + 1;
                         else
                         neutral = neutral + 1;
