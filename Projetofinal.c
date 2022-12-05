@@ -15,31 +15,39 @@ int main()
 
     do 
     {
-    printf("Digite o número de sessões que deseja (mínimo 2 e no máximo 2)\n");
-    scanf("%d", &sessions);
+        printf("Digite o número de sessões que deseja (mínimo 2 e no máximo 2)\n");
+        scanf("%d", &sessions);
     }
 
     while (sessions != 2);
     {
         do 
         {
-        printf("Informe a quantidade de pessoas na sessao 1 (mínimo 10 telespectadores por sessao)\n");
-        scanf("%d", &peopleSessionOne);
+            printf("Informe a quantidade de pessoas na sessao 1 (mínimo 10 telespectadores por sessao)\n");
+            scanf("%d", &peopleSessionOne);
         }
-         while (peopleSessionOne <= 10);
-
+        
+         while (peopleSessionOne < 10);
+        
             do 
             {
-                printf("\nUse --> M - masculino, F - Feminino.\n\nDigite o sexo do telespectador %d: ", accountant);
-                scanf("%s", &sex);
-                fflush (stdout);
-                printf("\nDigite a idade do telespectador %d: ", accountant);
-                scanf("%d", &age);
-                    if (age > 3);
-                    if (age < 100);
-                    else printf("Digite uma idade superior a 3 anos e inferior a 100 anos");
+                do 
+				{
+					printf("\nUse --> M - masculino, F - Feminino.\n\nDigite o sexo do telespectador %d: ", accountant);
+                	scanf("%s", &sex);
+            	}
+					while (sex != 'M'|| sex != 'm'|| sex != 'F'|| sex != 'f');
+
+                do 
+				{
+					printf("\nDigite a idade do telespectador %d: ", accountant);
+                	scanf("%d", &age);                	
+				}
+                	while (age > 3 && age < 100);
+                	
                 accountant++;
             }
+        
             while (accountant <= peopleSessionOne);
        
            accountant = 1;         
