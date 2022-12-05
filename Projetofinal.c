@@ -12,6 +12,7 @@ int main()
     printf("Repositório GitHub https://github.com/MozanielJr/ProjetoFinalAlgoritmoUCB.git\n\n\n");
 
     int sessions, peopleSessionOne, peopleSessionTwo, accountant=1, age, ticketFull=0, ticketHalf=0, male=0, female=0, adultMen=0, adultWomen=0;
+    int notaNps, detrator=0, promoter=0, neutral=0,npsSessionOne;
     char sex, ticket;
 	
 	
@@ -78,13 +79,27 @@ int main()
 						
 						
 					}
+                do 
+				{
+					printf("\nEm uma escala de 0 a 10, quanto o telespectador %d recomendaria o filme para um amigo?: ", accountant);
+                	scanf("%d", &notaNps);
+            	}
+					while (notaNps < 0 || notaNps > 10);
+					if (notaNps <= 6)
+                        detrator = detrator + 1;
+                        else if (notaNps => 9)
+                        promoter = promoter + 1;
+                        else
+                        neutral = neutral + 1;
+
+					
                 accountant++;
             }
         
             while (accountant <= peopleSessionOne);
    
    printf("Valor das Inteiras %d e Valor das Meias %d \n", ticketFull, ticketHalf); 
-   	printf("Homenes %d e Mulheres %d \n", male, female);    
+   	printf("Homens %d e Mulheres %d \n", male, female);    
    	printf("Homens Adultos %d e Mulheres adultas %d \n", adultMen, adultWomen);
  /*
            accountant = 1;         
