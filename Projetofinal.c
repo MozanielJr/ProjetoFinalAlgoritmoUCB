@@ -87,11 +87,11 @@ int main()
             	}
 					while (scoreNps < 0 || scoreNps > 10);
 					if (scoreNps <= 6)
-                        detrator = detrator + 1;
+                        detrator = detrator + 1.00;
                         else if (scoreNps >= 9)
-                        promoter = promoter + 1;
+                        promoter = promoter + 1.00;
                         else
-                        neutral = neutral + 1;
+                        neutral = neutral + 1.00;
 
 					
                 accountant++;
@@ -99,17 +99,17 @@ int main()
         
             while (accountant <= peopleSessionOne);
 
-   percentualPromoter = (promoter+detrator+neutral);
-   percentualDetrator = (promoter+detrator+neutral);         
+   percentualPromoter = (promoter)/(promoter+detrator+neutral);
+   percentualDetrator = detrator/(promoter+detrator+neutral);         
    npsSessionOne = percentualPromoter - percentualDetrator;
 
 
    printf("Valor das Inteiras %d e Valor das Meias %d \n", ticketFull, ticketHalf); 
    	printf("Homens %d e Mulheres %d \n", male, female);    
    	printf("Homens Adultos %d e Mulheres adultas %d \n", adultMen, adultWomen);
-    printf("Percentual promotores %f", percentualPromoter);
-    printf("Percentual detratores %f", percentualDetrator);
-    printf("Nota NPS %f", npsSessionOne);
+    printf("Percentual promotores %f \n", percentualPromoter);
+    printf("Percentual detratores %f \n", percentualDetrator);
+    printf("Nota NPS %f\n", npsSessionOne);
     printf("A quantidade de detratores %d, promotores %d, neutros %d e a nota de NPS foi de %f", detrator, promoter, neutral, npsSessionOne);
     
  /*
