@@ -12,8 +12,8 @@ int main()
     printf("Repositório GitHub https://github.com/MozanielJr/ProjetoFinalAlgoritmoUCB.git\n\n\n");
 
     int sessions, peopleSessionOne, peopleSessionTwo, accountant=1, age, ticketFull=0, ticketHalf=0, male=0, female=0, adultMen=0, adultWomen=0;
-    int notaNps, detrator=0, promoter=0, neutral=0;
-    float npsSessionOne;
+    int scoreNps, detrator=0, promoter=0, neutral=0;
+    float npsSessionOne, percentualPromoter, percentualDetrator;
     char sex, ticket;
 	
 	
@@ -83,12 +83,12 @@ int main()
                 do 
 				{
 					printf("\nEm uma escala de 0 a 10, quanto o telespectador %d recomendaria o filme para um amigo?: ", accountant);
-                	scanf("%d", &notaNps);
+                	scanf("%d", &scoreNps);
             	}
-					while (notaNps < 0 || notaNps > 10);
-					if (notaNps <= 6)
+					while (scoreNps < 0 || scoreNps > 10);
+					if (scoreNps <= 6)
                         detrator = detrator + 1;
-                        else if (notaNps >= 9)
+                        else if (scoreNps >= 9)
                         promoter = promoter + 1;
                         else
                         neutral = neutral + 1;
@@ -99,14 +99,18 @@ int main()
         
             while (accountant <= peopleSessionOne);
 
-            
-   npsSessionOne = (((promoter)/(promoter+neutral+detrator)) - ((detrator)/(promoter+neutral+detrator)))*100;
+   percentualPromoter = (promoter+detrator+neutral);
+   percentualDetrator = (promoter+detrator+neutral);         
+   npsSessionOne = percentualPromoter - percentualDetrator;
 
 
    printf("Valor das Inteiras %d e Valor das Meias %d \n", ticketFull, ticketHalf); 
    	printf("Homens %d e Mulheres %d \n", male, female);    
    	printf("Homens Adultos %d e Mulheres adultas %d \n", adultMen, adultWomen);
-    printf("A quantidade de detratores %d, promotores %d, neutros %d e a nota de NPS foi de %0.2f", detrator, promoter, neutral, npsSessionOne);
+    printf("Percentual promotores %f", percentualPromoter);
+    printf("Percentual detratores %f", percentualDetrator);
+    printf("Nota NPS %f", npsSessionOne);
+    printf("A quantidade de detratores %d, promotores %d, neutros %d e a nota de NPS foi de %f", detrator, promoter, neutral, npsSessionOne);
     
  /*
            accountant = 1;         
