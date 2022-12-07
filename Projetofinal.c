@@ -59,7 +59,7 @@ scanf("%d", &sessions);
             scanf("%d", &peopleSessionOne);
         }
         
-         while (peopleSessionOne < 2);
+         while (peopleSessionOne < 10);
         
             do 
             {
@@ -171,28 +171,28 @@ printf("\nDe 14 a 17 anos        -     Adolescentes      -       %d", youngOne);
 printf("\nDe 18 a 64 anos        -     Adultos           -       %d", adultONe);
 printf("\nDe 65 a 100 anos       -     Idosos            -       %d", oldOne);
 
-printf("\n\nMaiores de idade por sexo que assistiram ao filme:");
-printf("\n %d pessoas do sexo masculino com mais de 18 anos;\n", adultMen);
-printf("\n %d pessoas do sexo feminino com mais de 18 anos;\n", adultWomen);
+printf("\n\nPessoas com mais de 18 anos que assistiram ao filme:\n");
+printf("\n %d pessoas do sexo masculino;\n", adultMen);
+printf("\n %d pessoas do sexo feminino ;\n", adultWomen);
 
 
-printf("\n\nArrecadação da sessão 1:");
+printf("\n\nArrecadação da sessão 1:\n");
 printf("\nO total arrecadado na sessão foi de %d.", ticketFull+ticketHalf);
 if (ticketFull > ticketHalf)
     printf("\nSendo que dessa arrecadação houve mais pagamento de inteiras.");
-    else
+    else if (ticketHalf > ticketFull)
     printf("\nSendo que dessa arrecadação houve mais pagamento de meia entrada.");
+    else 
+    printf("\nSendo que a arrecadação foi igual de meia entrada e inteira.");
 
-printf("A Nota de NPS do filme %s foi de %0.2f", movieOne, npsSessionOne);
+printf("\nA Nota de NPS do filme %s foi de %0.2f", movieOne, npsSessionOne);
 
-printf("\n <<< Vamos para a segunda sessão! Aperte ENTER e vamos lá! >>>");
+printf("\n\n <<< Vamos para a segunda sessão! Aperte ENTER e vamos lá! >>>");
 	getch();
 
     system("cls");
                       
-            printf("\n\nQuantas pessoas assistiram ao filme na sessão 2 (mínimo 10 telespectadores):");
-        scanf("%d", &peopleSessionTwo);
-
+          
             fflush(stdin);
             
             printf("\n\nQual o nome do filme assistido na sessão 2: ");
@@ -202,11 +202,11 @@ printf("\n <<< Vamos para a segunda sessão! Aperte ENTER e vamos lá! >>>");
 
         do 
         {
-            printf("Informe a quantidade de pessoas na sessao 2 (mínimo 10 telespectadores por sessao)\n");
+            printf("\n\nQuantas pessoas assistiram ao filme na sessão 2 (mínimo 10 telespectadores):");
             scanf("%d", &peopleSessionTwo);
         }
         
-         while (peopleSessionTwo < 2);
+         while (peopleSessionTwo < 10);
         
             do 
             {
@@ -315,17 +315,19 @@ printf("\nDe 14 a 17 anos        -     Adolescentes      -       %d", youngTwo);
 printf("\nDe 18 a 64 anos        -     Adultos           -       %d", adultTwo);
 printf("\nDe 65 a 100 anos       -     Idosos            -       %d", oldTwo);
 
-printf("\n\nMaiores de idade por sexo que assistiram ao filme:");
-printf("\n %d pessoas do sexo masculino com mais de 18 anos;\n", adultMenTwo);
-printf("\n %d pessoas do sexo feminino com mais de 18 anos;\n", adultWomenTwo);
+printf("\n\nPessoas com mais de 18 anos que assistiram ao filme:\n");
+printf("\n %d pessoas do sexo masculino;\n", adultMenTwo);
+printf("\n %d pessoas do sexo feminino ;\n", adultWomenTwo);
 
 
-printf("\n\nArrecadação da sessão 1:");
+printf("\n\nArrecadação da sessão 2:\n");
 printf("\nO total arrecadado na sessão foi de %d.", ticketFullTwo+ticketHalfTwo);
 if (ticketFullTwo > ticketHalfTwo)
     printf("\nSendo que dessa arrecadação houve mais pagamento de inteiras.");
-    else
+    else if (ticketHalfTwo > ticketFullTwo)
     printf("\nSendo que dessa arrecadação houve mais pagamento de meia entrada.");
+    else 
+    printf("\nSendo que a arrecadação foi igual de meia entrada e inteira.");
 
 printf("\n\nA Nota de NPS do filme %s foi de %0.2f", movieTwo, npsSessionTwo);
 
