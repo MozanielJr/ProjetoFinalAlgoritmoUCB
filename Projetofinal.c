@@ -25,11 +25,11 @@ int main()
     }
     
     while (sessions != 2);
-    
+
             fflush(stdin);
             
             printf("Digite o nome do filme da sessao 1: ");
-            gets(movieOne);
+            fgets(movieOne, 100, stdin);
 
             fflush(stdin);
 
