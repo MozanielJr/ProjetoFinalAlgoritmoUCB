@@ -13,6 +13,7 @@ int main()
 
     int sessions, peopleSessionOne, peopleSessionTwo, accountant=1, age, ticketFull=0, ticketHalf=0, male=0, female=0, adultMen=0, adultWomen=0;
     int scoreNps, detrator=0.00, promoter=0.00, neutral=0.00;
+    int accountantAge=0, sumAge, kidOne, youngOne, adultONe, oldOne;
     float npsSessionOne, percentualPromoter, percentualDetrator;
     char sex, ticket;
 	
@@ -54,7 +55,19 @@ int main()
                 	scanf("%d", &age);                	
 				}
                 	while (age < 3 || age > 100);
-                	
+
+                	    sumAge = sumAge + age;
+                		accountantAge++;
+
+                	    if (age >=3 && age <= 13){
+                			kidOne = kidOne + 1;}
+                		if (age >= 14 && age <= 17){
+                			youngOne = youngOne +1;}
+                		if (age >= 18 && age <= 64){
+                			adultONe = adultONe + 1;}
+						if (age >= 65 && age <= 100){
+                			oldOne = oldOne + 1;}
+
                     if (sex == 'M' || sex == 'm' && age >= 18)
                             adultMen = adultMen + 1;
                     else if (sex == 'F' || sex == 'f' && age >= 18)
