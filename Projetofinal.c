@@ -141,7 +141,6 @@ int main()
    percentualDetrator = ((detrator+0.00)/(promoter+detrator+neutral))*100;         
    npsSessionOne = percentualPromoter - percentualDetrator;
 
-
    printf("\nValor das Inteiras %d e Valor das Meias %d \n", ticketFull, ticketHalf); 
    	printf("\nHomens %d e Mulheres %d \n", male, female);    
    	printf("\nHomens Adultos %d e Mulheres adultas %d \n", adultMen, adultWomen);
@@ -152,23 +151,42 @@ int main()
     printf("\nNome do filme: %s", movieOne);
     printf("\nTotal do sexo masculino %d\nTotal feminino %d", men, women);
     printf("\nCriancas: %d\nJovens: %d\nAdultos: %d\nIdosos: %d", kidOne, youngOne, adultONe, oldOne);
- /*
-           accountant = 1;         
-        printf("Informe a quantidade de pessoas na sessao 2\n");
-        scanf("%d", &peopleSessionTwo);
 
-        do 
-        {
-            printf("Use --> M - masculino, F - Feminino.\n\nDigite o sexo do telespectador %d: ", accountant);
-            scanf("%s", &sex);
-      
-            printf("\nDigite a idade do telespectador %d: ", accountant);
-            scanf("%d", &age);
-                if ( 3 < sex < 100);
-                else printf("Digite uma idade superior a 3 anos e inferior a 100 anos");
-            accountant++;
-        }
-        while (accountant <= peopleSessionTwo);
-     */   
+system("cls");
+
+printf("#####################################\n");
+printf("####Relatório da Primeira Sessão:####\n");
+printf("#####################################\n");
+
+printf("\nFilme apresentado: %s ", movieOne);
+
+printf("\n\nPessoas do sexo feminino que assistiram ao filme: %d", women);
+printf("\nPessoas do sexo masculino que assistiram ao filme: %d", men);
+
+printf("\n\nClassificação dos telespectadores por idade:\n");
+
+printf("\nIdade                  -     Classificação     -       Quantidade");
+printf("\nDe 03 a 13 anos        -     Crianças          -       %d", kidOne);
+printf("\nDe 14 a 17 anos        -     Adolescentes      -       %d", youngOne);
+printf("\nDe 18 a 64 anos        -     Adultos           -       %d", adultONe);
+printf("\nDe 65 a 100 anos       -     Idosos            -       %d", oldOne);
+
+printf("\n\nMaiores de idade por sexo que assistiram ao filme:");
+printf("\n %d pessoas do sexo masculino com mais de 18 anos;\n", adultMen);
+printf("\n %d pessoas do sexo feminino com mais de 18 anos;\n", adultWomen);
+
+
+printf("\n\nArrecadação da sessão 1:");
+printf("\nO total arrecadado na sessão foi de %d.", ticketFull+ticketHalf);
+if (ticketFull > ticketHalf)
+    printf("\nSendo que dessa arrecadação houve mais pagamento de inteiras.");
+    else
+    printf("\nSendo que dessa arrecadação houve mais pagamento de meia entrada.");
+
+
+
+
+
+
        
 }   
