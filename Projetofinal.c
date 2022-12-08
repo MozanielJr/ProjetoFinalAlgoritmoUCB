@@ -1,15 +1,17 @@
-#include<stdio.h>//mecanismo para entrada e saída (input e output)
-#include<locale.h>//necessário para utilizar o setlocale (acentuação)
+#include<stdio.h>//mecanismo para entrada e saída (input e output).
+#include<locale.h>//necessário para utilizar o setlocale, que com ele é possivel definir uma linguagem para os caracteres.
+#include<stdlib.h>//localizadas as funções responsáveis pela manipulação da alocação de memória.
+#include<conio.h>//usado para manipular caracteres.
 
-int main()
+int main()//indica se o comando retornará 0, ou seja, sem erro.
 {
     
-    setlocale(LC_ALL, "Portuguese");//Definindo a acentuação na linguagem portuguesa
+    setlocale(LC_ALL, "Portuguese");//definindo a linguagem portuguesa para os caracteres.
     
-    printf("Nome: João Arthur Pereira Melo\nMatrícula: UC22200743\nCurso: Ciência da computação\n\n");
-    printf("Nome: Mozaniel Medeiros dos Santos Junior\nMatrícula: UC22103112\nCurso: Ciência da computação\n\n");
-    printf("Nome: Nathalia Gonçalves Silva\nMatrícula: UC22200563\nCurso: Ciência da computação\n\n\n");
-    printf("Repositório GitHub https://github.com/MozanielJr/ProjetoFinalAlgoritmoUCB.git\n\n\n");
+    printf("Nome: João Arthur Pereira Melo\nMatrícula: UC22200743\nCurso: Ciência da computação\n\n");//integrante do projeto e as respectivas informações.
+    printf("Nome: Mozaniel Medeiros dos Santos Junior\nMatrícula: UC22103112\nCurso: Ciência da computação\n\n");//integrante do projeto e as respectivas informações.
+    printf("Nome: Nathalia Gonçalves Silva\nMatrícula: UC22200563\nCurso: Ciência da computação\n\n\n");//integrante do projeto e as respectivas informações.
+   // printf("Repositório GitHub https://github.com/MozanielJr/ProjetoFinalAlgoritmoUCB.git\n\n\n");//repositório usado para compartilhar o projeto.
 
     int sessions, peopleSessionOne, accountant=1, age, ticketFull=0, ticketHalf=0, male=0, female=0, adultMen=0, adultWomen=0;
     int scoreNps, detrator=0.00, promoter=0.00, neutral=0.00;
@@ -23,38 +25,54 @@ int main()
     float  npsSessionTwo, percentualPromoterTwo, percentualDetratorTwo;
 	char  sexTwo, ticketTwo, movieTwo[100]; 
 	
-    do 
+
+	printf("##############################################################\n");//interação com o usuário.
+	printf("################## C              B  #########################\n");//interação com o usuário.
+	printf("##################   I          S    #########################\n");//interação com o usuário.
+	printf("##################     N      B      #########################\n");//interação com o usuário.
+	printf("##################       E           #########################\n");//interação com o usuário.
+	printf("##############################################################\n");//interação com o usuário.
+	
+	printf("\nOlá! Estamos querendo tornar a sua experiência cada vez melhor! \n");//interação com o usuário.
+    printf("\nE pensando nisso, queremos fazer uma breve pesquisa.\n");//interação com o usuário.
+    printf("\n <<< Aperte ENTER e vamos lá! >>>");//interação com o usuário.
+	getch();//usado para ler um caracter e não mostra-lo.
+	system("cls");//limpa tudo acima.
+
+
+    do //mecanismo de repetição usado para solicitar as sessões.
     {
-        printf("Digite o número de sessões que deseja (mínimo 2 e no máximo 2)\n");
-        scanf("%d", &sessions);
+		printf("Informe o número de sessões que participarão da pesquisa(mínimo 2 e máximo 2):");
+		scanf("%d", &sessions);
     }
     
-    while (sessions != 2);
-
-            fflush(stdin);
-            
-            printf("Digite o nome do filme da sessao 1: ");
+    while (sessions != 2); //validando o caracter informado pelo usuário para que continue o programa, caso contrário, repetir o código até que seja validado.
+	system("cls");
+            fflush(stdin); //limpando o buffer do teclado.
+            //INICIANDO A PRIMEIRA SESSÂO.
+            printf("\n\nQual o nome do filme assistido na sessão 1: ");
             fgets(movieOne, 100, stdin);
 
-            fflush(stdin);
+            fflush(stdin); //limpando o buffer do teclado.
 
-        do 
+        do  //mecanismo de repetição usado para solicitar a quantidade de pessoas na sessão 1.
         {
-            printf("Informe a quantidade de pessoas na sessao 1 (mínimo 10 telespectadores por sessao)\n");
+            printf("\n\nQuantas pessoas assistiram ao filme na sessão 1 (mínimo 10 telespectadores):");
             scanf("%d", &peopleSessionOne);
         }
         
-         while (peopleSessionOne < 2);
-        
-            do 
+         while (peopleSessionOne < 4); //validando o caracter informado pelo usuário para que continue o programa, caso contrário, repetir o código até que seja validado.
+    system("cls");    
+            do  //mecanismo de repetição usado para solicitar as informações de cada usuário da sessão 1.
             {
-                do 
+                do  //mecanismo de repetição usado para solicitar o sexo dos telespectadores da sessão 1.
 				{
-					printf("\nUse --> M - masculino, F - Feminino.\n\nDigite o sexo do telespectador %d: ", accountant);
+					printf("\n\n Qual o sexo do telespectador %d? \nUse --> M - Masculino, F - Feminino:", accountant);
                 	scanf("%s", &sex);
             	}
-					while (sex != 'M' && sex != 'm' && sex != 'F' && sex != 'f');
-				        switch (sex)
+					while (sex != 'M' && sex != 'm' && sex != 'F' && sex != 'f'); //validando o caracter informado pelo usuário para que continue o programa, caso contrário, repetir o código até que seja validado.
+				    system("cls");
+					    switch (sex) //usado para separar os telespectadores de sexo masculino e feminino.
                         {
 						    case 'M': male = male + 1; break;
 						    case 'm': male = male + 1; break;
@@ -62,17 +80,17 @@ int main()
 						    case 'f': female = female + 1; break;
 						default: break;
                         }
-                do 
+                do  //mecanismo de repetição usado para solicitar a idade dos telespectadores da sessão 1.
 				{
-					printf("\nDigite a idade do telespectador %d: ", accountant);
+					printf("\n\nQual a idade do telespectador %d ?: ", accountant);
                 	scanf("%d", &age);                	
 				}
-                	while (age < 3 || age > 100);
+                	while (age < 3 || age > 100); //validando o caracter informado pelo usuário para que continue o programa, caso contrário, repetir o código até que seja validado.
+					system("cls");
+                	    sumAge = sumAge + age; // armazenando e somando a idade dos telespectadores para que seja feita a média de idade da sessão 1.
+                		accountantAge++; //contando quantos telespectadores tiveram a idade informada.
 
-                	    sumAge = sumAge + age;
-                		accountantAge++;
-
-                	    if (age >=3 && age <= 13){
+                	    if (age >=3 && age <= 13){ //separando os telespectadores por classificação de acordo com sua idade.
                 			kidOne = kidOne + 1;}
                 		if (age >= 14 && age <= 17){
                 			youngOne = youngOne +1;}
@@ -81,26 +99,28 @@ int main()
 						if (age >= 65 && age <= 100){
                 			oldOne = oldOne + 1;}
 
-                        if (sex == 'M' || sex == 'm' && age >= 18)
+                        if (sex == 'M' || sex == 'm' && age >= 18) //separando homens maiores de idade.
                             adultMen = adultMen + 1;
-                        if (sex == 'F' || sex == 'f' && age >= 18)
+                        if (sex == 'F' || sex == 'f' && age >= 18) //separando mulheres maiores de idade.
                             adultWomen = adultWomen + 1;
 
-                        if (sex == 'M' || sex == 'm')
+                        if (sex == 'M' || sex == 'm') //contanto quantos telespectadores do sexo masculino assistiram a sessão 1.
                             men = men + 1;
-                        if (sex == 'F' || sex == 'f')
+                        if (sex == 'F' || sex == 'f') //contanto quantos telespectadores do sexo feminino assistiram a sessão 1.
                             women = women + 1;                    
 
                                                            
                 
-                    fflush(stdin);
-                do 
+                    fflush(stdin); //limpando o buffer do teclado.
+                    
+                do   //mecanismo de repetição usado para solicitar o tipo de ingresso dos telespectadores da sessão 1.
 				{
-					printf("\nUse --> I - Inteira, M - Meia-entrada\n\n Digite se é Inteira ou meia do telespectador %d: ", accountant);
+					printf("\n\nQual o tipo de ingresso do telespectador %d? \nUse --> I - Inteira, M - Meia-entrada:", accountant);
                 	scanf("%c", &ticket);
             	}
-					while (ticket != 'I' && ticket != 'i' && ticket != 'M' && ticket != 'm');
-					    switch (ticket)
+					while (ticket != 'I' && ticket != 'i' && ticket != 'M' && ticket != 'm'); //validando o caracter informado pelo usuário para que continue o programa, caso contrário, repetir o código até que seja validado.
+					system("cls");
+					    switch (ticket) //usado para separar os telespectadores que pagaram inteira e os que pagaram meia entrada.
                         {
 						    case 'M': ticketHalf = ticketHalf + 25; break;
 						    case 'm': ticketHalf = ticketHalf + 25; break;
@@ -110,14 +130,14 @@ int main()
                         }
 						
 											
-                do 
+                do  //mecanismo de repetição usado para solicitar a nota para calcular o NPS do filme da sessão 1.
 				{
-					printf("\nEm uma escala de 0 a 10, quanto o telespectador %d recomendaria o filme para um amigo?: ", accountant);
+					printf("\n\nEm uma escala de 0 a 10, quanto o telespectador %d recomendaria o filme para um amigo?:", accountant);
                 	scanf("%d", &scoreNps);
             	}
-					while (scoreNps < 0 || scoreNps > 10);
-
-					    if (scoreNps <= 6)
+					while (scoreNps < 0 || scoreNps > 10); //validando o caracter informado pelo usuário para que continue o programa, caso contrário, repetir o código até que seja validado.
+					system("cls");
+					    if (scoreNps <= 6) //separando os telespectadores de acordo com a nota dada.
                             detrator = detrator + 1;
                         else if (scoreNps >= 9)
                             promoter = promoter + 1;
@@ -128,37 +148,85 @@ int main()
                 accountant++;
             }
         
-            while (accountant <= peopleSessionOne);
+            while (accountant <= peopleSessionOne); //validando o caracter informado pelo usuário para que continue o programa, caso contrário, repetir o código até que seja validado.
 
 
-                  
-        printf("Informe a quantidade de pessoas na sessao 2\n");
-        scanf("%d", &peopleSessionTwo);
+   percentualPromoter = ((promoter+0.00)/(promoter+detrator+neutral))*100; //calculo para calcular o NPS do filme da sessão 1.
+   percentualDetrator = ((detrator+0.00)/(promoter+detrator+neutral))*100;         
+   npsSessionOne = percentualPromoter - percentualDetrator;
 
-            fflush(stdin);
-            
-            printf("Digite o nome do filme da sessao 2: ");
+
+system("cls"); //limpa tudo acima.
+
+
+printf("#####################################\n");
+printf("####Relatório da Primeira Sessão:####\n");
+printf("#####################################\n");
+
+printf("\nFilme apresentado: %s ", movieOne);
+
+printf("\n\nPessoas do sexo feminino que assistiram ao filme: %d", women);
+printf("\nPessoas do sexo masculino que assistiram ao filme: %d", men);
+
+printf("\n\nClassificação dos telespectadores por idade:\n");
+
+printf("\nIdade                  -     Classificação     -       Quantidade");
+printf("\nDe 03 a 13 anos        -     Crianças          -       %d", kidOne);
+printf("\nDe 14 a 17 anos        -     Adolescentes      -       %d", youngOne);
+printf("\nDe 18 a 64 anos        -     Adultos           -       %d", adultONe);
+printf("\nDe 65 a 100 anos       -     Idosos            -       %d", oldOne);
+
+printf("\n\nPessoas com mais de 18 anos que assistiram ao filme:\n");
+printf("\n %d pessoas do sexo masculino;\n", adultMen);
+printf("\n %d pessoas do sexo feminino ;\n", adultWomen);
+
+getch();//usado para ler um caracter e não mostra-lo.
+
+system("cls"); //limpa tudo acima.
+
+
+printf("\n\nArrecadação da sessão 1:\n");
+printf("\nO total arrecadado na sessão foi de %d.", ticketFull+ticketHalf);
+if (ticketFull > ticketHalf)
+    printf("\n\nSendo que dessa arrecadação houve mais pagamento de inteiras.");
+    else if (ticketHalf > ticketFull)
+    printf("\n\nSendo que dessa arrecadação houve mais pagamento de meia entrada.");
+    else 
+    printf("\n\nSendo que a arrecadação foi igual de meia entrada e inteira.");
+
+printf("\n\n\n %0.2f foi a Nota de NPS do filme %s", npsSessionOne,movieOne);
+
+printf("\n\n <<< Vamos para a segunda sessão! Aperte ENTER e vamos lá! >>>");
+	getch();//usado para ler um caracter e não mostra-lo.
+
+    system("cls"); //limpa tudo acima.
+                      
+          
+            fflush(stdin); //limpando o buffer do teclado.
+            //INICIANDO A PRIMEIRA SESSÂO.
+            printf("\n\nQual o nome do filme assistido na sessão 2: ");
             fgets(movieTwo, 100, stdin);
 
-            fflush(stdin);
-
-        do 
+            fflush(stdin); //limpando o buffer do teclado.
+            system("cls");
+        do  //mecanismo de repetição usado para solicitar a quantidade de pessoas na sessão 2.
         {
-            printf("Informe a quantidade de pessoas na sessao 2 (mínimo 10 telespectadores por sessao)\n");
+            printf("\n\nQuantas pessoas assistiram ao filme na sessão 2 (mínimo 10 telespectadores):");
             scanf("%d", &peopleSessionTwo);
         }
         
-         while (peopleSessionTwo < 2);
-        
-            do 
+         while (peopleSessionTwo < 4);; //validando o caracter informado pelo usuário para que continue o programa, caso contrário, repetir o código até que seja validado.
+        system("cls");
+            do  //mecanismo de repetição usado para solicitar as informações de cada usuário da sessão 2.
             {
-                do 
+                do  //mecanismo de repetição usado para solicitar o sexo dos telespectadores da sessão 2.
 				{
-					printf("\nUse --> M - masculino, F - Feminino.\n\nDigite o sexo do telespectador %d: ", accountantTwo);
+					printf("\n\n Qual o sexo do telespectador %d? \nUse --> M - Masculino, F - Feminino:", accountantTwo);
                 	scanf("%s", &sexTwo);
             	}
-					while (sexTwo != 'M' && sexTwo != 'm' && sexTwo != 'F' && sexTwo != 'f');
-				        switch (sexTwo)
+					while (sexTwo != 'M' && sexTwo != 'm' && sexTwo != 'F' && sexTwo != 'f');; //validando o caracter informado pelo usuário para que continue o programa, caso contrário, repetir o código até que seja validado.
+				    system("cls");  
+					    switch (sexTwo) //usado para separar os telespectadores de sexo masculino e feminino.
                         {
 						    case 'M': maleTwo = maleTwo + 1; break;
 						    case 'm': maleTwo = maleTwo + 1; break;
@@ -166,17 +234,17 @@ int main()
 						    case 'f': femaleTwo = femaleTwo + 1; break;
 						default: break;
                         }
-                do 
+                do   //mecanismo de repetição usado para solicitar a idade dos telespectadores da sessão 2.
 				{
-					printf("\nDigite a idade do telespectador %d: ", accountantTwo);
+					printf("\n\nQual a idade do telespectador %d ?: ", accountantTwo);
                 	scanf("%d", &ageTwo);                	
 				}
-                	while (ageTwo < 3 || ageTwo > 100);
+                	while (ageTwo < 3 || ageTwo > 100);; //validando o caracter informado pelo usuário para que continue o programa, caso contrário, repetir o código até que seja validado.
+                    system("cls");
+                	    sumAgeTwo = sumAgeTwo + ageTwo; // armazenando e somando a idade dos telespectadores para que seja feita a média de idade da sessão 2.
+                		accountantAgeTwo++; //contando quantos telespectadores tiveram a idade informada.
 
-                	    sumAgeTwo = sumAgeTwo + ageTwo;
-                		accountantAgeTwo++;
-
-                	    if (ageTwo >=3 && ageTwo <= 13){
+                	    if (ageTwo >=3 && ageTwo <= 13){ //separando os telespectadores por classificação de acordo com sua idade.
                 			kidTwo = kidTwo + 1;}
                 		if (ageTwo >= 14 && ageTwo <= 17){
                 			youngTwo = youngTwo +1;}
@@ -185,26 +253,28 @@ int main()
 						if (ageTwo >= 65 && ageTwo <= 100){
                 			oldTwo = oldTwo + 1;}
 
-                        if (sexTwo == 'M' || sexTwo == 'm' && ageTwo >= 18)
+                        if (sexTwo == 'M' || sexTwo == 'm' && ageTwo >= 18) //separando homens maiores de idade.
                             adultMenTwo = adultMenTwo + 1;
-                        if (sexTwo == 'F' || sexTwo == 'f' && ageTwo >= 18)
+                        if (sexTwo == 'F' || sexTwo == 'f' && ageTwo >= 18) //separando mulheres maiores de idade.
                             adultWomenTwo = adultWomenTwo + 1;
 
-                        if (sexTwo == 'M' || sexTwo == 'm')
+                        if (sexTwo == 'M' || sexTwo == 'm') //contanto quantos telespectadores do sexo masculino assistiram a sessão 2.
                             menTwo = menTwo + 1;
-                        if (sexTwo == 'F' || sexTwo == 'f')
+                        if (sexTwo == 'F' || sexTwo == 'f') //contanto quantos telespectadores do sexo feminino assistiram a sessão 2.
                             womenTwo = womenTwo + 1;                    
 
                                                            
                 
-                    fflush(stdin);
-                do 
+                    fflush(stdin); //limpando o buffer do teclado.
+                    
+                do    //mecanismo de repetição usado para solicitar o tipo de ingresso dos telespectadores da sessão 2.
 				{
-					printf("\nUse --> I - Inteira, M - Meia-entrada\n\n Digite se é Inteira ou meia do telespectador %d: ", accountantTwo);
+					printf("\n\nQual o tipo de ingresso do telespectador %d? \nUse --> I - Inteira, M - Meia-entrada:", accountantTwo);
                 	scanf("%c", &ticketTwo);
             	}
-					while (ticketTwo != 'I' && ticketTwo != 'i' && ticketTwo != 'M' && ticketTwo != 'm');
-					    switch (ticketTwo)
+					while (ticketTwo != 'I' && ticketTwo != 'i' && ticketTwo != 'M' && ticketTwo != 'm');; //validando o caracter informado pelo usuário para que continue o programa, caso contrário, repetir o código até que seja validado.
+					system("cls");
+					    switch (ticketTwo) //usado para separar os telespectadores que pagaram inteira e os que pagaram meia entrada.
                         {
 						    case 'M': ticketHalfTwo = ticketHalfTwo + 25; break;
 						    case 'm': ticketHalfTwo = ticketHalfTwo + 25; break;
@@ -214,14 +284,14 @@ int main()
                         }
 						
 											
-                do 
+                do  //mecanismo de repetição usado para solicitar a nota para calcular o NPS do filme da sessão 2.
 				{
-					printf("\nEm uma escala de 0 a 10, quanto o telespectador %d recomendaria o filme para um amigo?: ", accountantTwo);
+					printf("\n\nEm uma escala de 0 a 10, quanto o telespectador %d recomendaria o filme para um amigo?:", accountantTwo);
                 	scanf("%d", &scoreNpsTwo);
             	}
-					while (scoreNpsTwo < 0 || scoreNpsTwo > 10);
-
-					    if (scoreNpsTwo <= 6)
+					while (scoreNpsTwo < 0 || scoreNpsTwo > 10);; //validando o caracter informado pelo usuário para que continue o programa, caso contrário, repetir o código até que seja validado.
+                    system("cls");
+					    if (scoreNpsTwo <= 6) //separando os telespectadores de acordo com a nota dada.
                             detratorTwo = detratorTwo + 1;
                         else if (scoreNpsTwo >= 9)
                             promoterTwo = promoterTwo + 1;
@@ -232,47 +302,52 @@ int main()
                 accountantTwo++;
             }
         
-            while (accountantTwo <= peopleSessionTwo);
+            while (accountantTwo <= peopleSessionTwo);; //validando o caracter informado pelo usuário para que continue o programa, caso contrário, repetir o código até que seja validado.
 
-                percentualPromoter = ((promoter+0.00)/(promoter+detrator+neutral))*100;
-                percentualDetrator = ((detrator+0.00)/(promoter+detrator+neutral))*100;         
-                npsSessionOne = percentualPromoter - percentualDetrator;
+   percentualPromoterTwo = ((promoterTwo+0.00)/(promoterTwo+detratorTwo+neutralTwo))*100;//calculo para calcular o NPS do filme da sessão 2.
+   percentualDetratorTwo = ((detratorTwo+0.00)/(promoterTwo+detratorTwo+neutralTwo))*100;         
+   npsSessionTwo = percentualPromoterTwo - percentualDetratorTwo;
 
-                printf("\nValor das Inteiras %d e Valor das Meias %d \n", ticketFull, ticketHalf); 
-   	            printf("\nHomens %d e Mulheres %d \n", male, female);    
-                printf("\nHomens Adultos %d e Mulheres adultas %d \n", adultMen, adultWomen);
-                printf("\nPercentual promotores %.00f \n", percentualPromoter);
-                printf("\nPercentual detratores %.00f \n", percentualDetrator);
-                printf("\nNota NPS %.00f\n", npsSessionOne);
-                printf("\nA quantidade de detratores %d, promotores %d, neutros %d e a nota de NPS foi de %.00f", detrator, promoter, neutral, npsSessionOne);
-                printf("\nNome do filme: %s", movieOne);
-                printf("\nTotal do sexo masculino %d\nTotal feminino %d", men, women);
-                printf("\nCriancas: %d\nJovens: %d\nAdultos: %d\nIdosos: %d", kidOne, youngOne, adultONe, oldOne);
-                printf("A media de idade dos telespectadores que assistiram o filme 1 e de: %.00d", (sumAge / accountantAge));
+system("cls"); //limpa tudo acima.
+
+printf("#####################################\n");
+printf("####Relatório da Segunda Sessão:#####\n");
+printf("#####################################\n");
+
+printf("\nFilme apresentado: %s ", movieTwo);
+
+printf("\n\nPessoas do sexo feminino que assistiram ao filme: %d", womenTwo);
+printf("\nPessoas do sexo masculino que assistiram ao filme: %d", menTwo);
+
+printf("\n\nClassificação dos telespectadores por idade:\n");
+
+printf("\nIdade                  -     Classificação     -       Quantidade");
+printf("\nDe 03 a 13 anos        -     Crianças          -       %d", kidTwo);
+printf("\nDe 14 a 17 anos        -     Adolescentes      -       %d", youngTwo);
+printf("\nDe 18 a 64 anos        -     Adultos           -       %d", adultTwo);
+printf("\nDe 65 a 100 anos       -     Idosos            -       %d", oldTwo);
+
+printf("\n\nPessoas com mais de 18 anos que assistiram ao filme:\n");
+printf("\n %d pessoas do sexo masculino;\n", adultMenTwo);
+printf("\n %d pessoas do sexo feminino ;\n", adultWomenTwo);
+
+getch();
+system("cls");
+
+//INFORMANDO AS ARRECADAÇÔES.
+printf("\n\nArrecadação da sessão 2:\n");
+printf("\nO total arrecadado na sessão foi de %d.", ticketFullTwo+ticketHalfTwo);
+if (ticketFullTwo > ticketHalfTwo)
+    printf("\n\nSendo que dessa arrecadação houve mais pagamento de inteiras.");
+    else if (ticketHalfTwo > ticketFullTwo)
+    printf("\n\nSendo que dessa arrecadação houve mais pagamento de meia entrada.");
+    else 
+    printf("\n\nSendo que a arrecadação foi igual de meia entrada e inteira.");
+
+printf("\n\n\nA %0.2f foi a Nota de NPS do filme %s", npsSessionTwo, movieTwo);
 
 
-                percentualPromoter = ((promoter+0.00)/(promoter+detrator+neutral))*100;
-                percentualDetrator = ((detrator+0.00)/(promoter+detrator+neutral))*100;         
-                npsSessionOne = percentualPromoter - percentualDetrator;
+printf("\n\nAté a próxima sessão!!!");
+	getch();
 
-                printf("\nValor das Inteiras %d e Valor das Meias %d \n", ticketFullTwo, ticketHalfTwo); 
-                printf("\nHomens %d e Mulheres %d \n", maleTwo, femaleTwo);    
-                printf("\nHomens Adultos %d e Mulheres adultas %d \n", adultMenTwo, adultWomenTwo);
-                printf("\nPercentual promotores %.00f \n", percentualPromoterTwo);
-                printf("\nPercentual detratores %.00f \n", percentualDetratorTwo);
-                printf("\nNota NPS %.00f\n", npsSessionTwo);
-                printf("\nA quantidade de detratores %d, promotores %d, neutros %d e a nota de NPS foi de %.00f", detratorTwo, promoterTwo, neutralTwo, npsSessionTwo);
-                printf("\nNome do filme: %s", movieOne);
-                printf("\nTotal do sexo masculino %d\nTotal feminino %d", menTwo, womenTwo);
-                printf("\nCriancas: %d\nJovens: %d\nAdultos: %d\nIdosos: %d", kidTwo, youngTwo, adultTwo, oldTwo);
-                printf("A media de idade dos telespectadores que assistiram o filme 2 e de: %.00d", (sumAgeTwo / accountantAgeTwo));
-                
-
-                percentualPromoterTwo = ((promoterTwo+0.00)/(promoterTwo+detratorTwo+neutralTwo))*100;
-                percentualDetratorTwo = ((detratorTwo+0.00)/(promoterTwo+detratorTwo+neutralTwo))*100;         
-                npsSessionTwo = percentualPromoterTwo - percentualDetratorTwo;
-}   
-
-
-
-
+}  
